@@ -57,7 +57,7 @@ public class VeiculoController {
 	
 	@PostMapping
     public ResponseEntity<Veiculo> post(@Valid @RequestBody Veiculo veiculo){
-        if (veiculoRepository.existsById(veiculo.getViagem().getId()))
+        if (viagemRepository.existsById(veiculo.getViagem().getId()))
             return ResponseEntity.status(HttpStatus.CREATED).
                     body(veiculoRepository.save(veiculo));
 
